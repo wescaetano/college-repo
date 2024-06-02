@@ -1,31 +1,43 @@
-#include <stdio.h>
-#include <locale.h>
 #include <iostream>
-
+#include <iomanip> // Para usar std::setprecision
 using namespace std;
 
-int main () {
-	setlocale (LC_ALL, "Portuguese");
-	
-	float salario, desc;
-	
-	cout << "Digite o valor de seu salário: " << endl;
-	cin >> salario;
-	
-	if (salario <= 600) {
-		cout << "Isento a cobrança de INSS" << endl;
-	} else if (salario > 600 && salario <= 1200) {
-		cout << " O valor do INSS cobrado foi de 20% " << endl;
-		desc = salario - (salario * 0.2 );
-		cout << desc;
-	} else if (salario > 1200 && salario <= 2000) {
-		cout << "O valor do INSS cobrado foi de 25% " << endl;
-		desc = salario - (salario * 0.25);
-		cout << desc;
-	} else {
-		cout << "O valor do INSS cobrado foi de 30% " << endl;
-		desc = salario - (salario * 0.30);
-		cout << desc;
-	}
-	
+// Constantes para as taxas de INSS
+const float TAXA_ATE_600 = 0.0;
+const float TAXA_ATE_1200 = 0.2;
+const float TAXA_ATE_2000 = 0.25;
+const float TAXA_ACIMA_2000 = 0.3;
+
+// Função para calcular o desconto de INSS
+float calcularDescontoINSS(float salario) {
+    if (salario <= 600) {
+        return salario * TAXA_ATE_600;
+    } else if (salario <= 1200) {
+        return salario * TAXA_ATE_1200;
+    } else if (salario <= 2000) {
+        return salario * TAXA_ATE_2000;
+    } else {
+        return salario * TAXA_ACIMA_2000;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "Portuguese");
+
+    float salario, desconto;
+
+    cout << "Digite o valor do seu salário: ";
+    cin >> salario;
+
+    desconto = calcularDescontoINSS(salario);
+
+    if (desconto == 0.0) {
+        cout << "Isento da cobrança de INSS" << endl;
+    } else {
+        cout << fixed << setprecision(2); // Formatação para duas casas decimais
+        cout << "O valor do INSS cobrado foi de: R$ " << desconto << endl;
+        cout << "Salário líquido: R$ " << (salario - desconto) << endl;
+    }
+
+    return 0;
 }
