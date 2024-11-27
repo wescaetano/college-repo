@@ -1,4 +1,4 @@
-## 2° Lista Avaliativa - Linguagem C - 2° Semestre
+## 2° Lista Avaliativa - Linguagem C - Arrays
 
 
 1) Escreva um programa que leia a idade de 10 pessoas e armazene-as em um vetor. Calcule

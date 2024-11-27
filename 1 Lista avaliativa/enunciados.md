@@ -1,14 +1,4 @@
-## 1° Lista Avaliativa - linguagem C - 2° Semestre
-
-1) Escreva um programa utilizando o comando switch que imprima o mês por extenso de
-acordo com o número digitado pelo usuário (entre 1 e 12).
-
-2) Escreva um programa que leia um conjunto de 10 números inteiros. Calcule e mostre:
-? menor número
-? soma dos números pares e maiores que 10
-? quantidade de números ímpares
-? média dos números maiores que 20
-
+## 1° Lista Avaliativa - linguagem C - Switch cases
 3) Faça um programa que receba dez números inteiros. Calcule e mostre:
 ? A soma dos números primos
 ? A média dos números múltiplos de 3 que são maiores que 10
