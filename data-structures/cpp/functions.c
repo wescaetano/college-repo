@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <locale.h>
 
-float dividir(int n);
+float dividir(float n);
 int somar(int n);
 int subtrair(int n);
 float mult(int n);
@@ -26,7 +26,7 @@ int main() {
 
     
     float div = dividir(multi);
-    printf("O número %d dividido por 2 é: %.2f\n", multi, div);
+    printf("O número %.2f dividido por 2 é: %.2f\n", multi, div);
 }
 
 int somar(int n){
@@ -41,6 +41,6 @@ float mult(int n){
     return n*3;
 }
 
-float dividir(int n){
-    return n*3;
+float dividir(float n){
+    return n/2;
 }
